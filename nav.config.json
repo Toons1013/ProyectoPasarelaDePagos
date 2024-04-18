@@ -1,10 +1,5 @@
 {
   "public": [
-    {
-      "id": "Menu_Products",
-      "nav_url": "index.php?page=Products_Products",
-      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;WW Productos"
-    },
      {
       "id": "Menu_SignUp",
       "nav_url": "index.php?page=Sec_Register",
@@ -14,6 +9,11 @@
       "id": "Menu_SignIn",
       "nav_url": "index.php?page=Sec_Login",
       "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Iniciar Sesión"
+    },
+    {
+      "id": "Menu_Carrito",
+      "nav_url": "index.php?page=Carrito_carritoList",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Carrito"
     }
   ],
   "private": [
@@ -21,6 +21,21 @@
       "id":"Menu_PaymentCheckout",
       "nav_url": "index.php?page=Checkout_Checkout",
       "nav_label": "Carretilla de Compra"
+    },
+    {
+      "id": "Menu_ProductsEditar",
+      "nav_url": "index.php?page=Products_Products",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Productos Editar"
+    },
+    {
+      "id": "Menu_ProductsPrivate",
+      "nav_url": "index.php?page=Productosdigitales",
+      "nav_label":"<i class=\"fas fa-sign-in-alt\"></i>&nbsp;Productos"
+    },
+    {
+      "id": "Menu_CarritoPrivate",
+      "nav_url": "index.php?page=Carrito_carritoList",
+      "nav_label":"<i class=\"fas fa-table\"></i>&nbsp;Carrito"
     }
   ]
 
