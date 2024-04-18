@@ -37,7 +37,7 @@ CREATE TABLE `usuario` (
   PRIMARY KEY (`usercod`),
   UNIQUE KEY `useremail_UNIQUE` (`useremail`),
   KEY `usertipo` (`usertipo`,`useremail`,`usercod`,`userest`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `usuario` (
 --
 
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'danielg.rivera00@gmail.com','Daniel','$2y$10$Q0t88vdX1gx.hSttqdrYIuMQStmFteYuDiOx3vR.ni0OA0wGO.P4i','2024-04-18 01:21:58','ACT','2024-07-16 00:00:00','ACT','273a95f1cafc1f12b160e57bc25dc4caaf8241f38eb92e12e27f617d7771c79d','2024-04-18 01:21:58','PBL'),(2,'usuario123@gmail.com','UsuarioRandom','$2y$10$9JqfPcYULT5u1htO1XJXsuyzssmITMqAm6OdGMzh8uHWCc9uOAvsC','2024-04-18 02:37:30','ACT','2024-07-16 00:00:00','ACT','5e07f490b6d983dcc553546df53a8464c9a30ae65dd5075ba71c50e7e4f86e4b','2024-04-18 02:37:30','PBL');
+INSERT INTO `usuario` VALUES (1,'danielg.rivera00@gmail.com','Daniel','$2y$10$Q0t88vdX1gx.hSttqdrYIuMQStmFteYuDiOx3vR.ni0OA0wGO.P4i','2024-04-18 01:21:58','ACT','2024-07-16 00:00:00','ACT','273a95f1cafc1f12b160e57bc25dc4caaf8241f38eb92e12e27f617d7771c79d','2024-04-18 01:21:58','PBL'),(2,'usuario123@gmail.com','UsuarioRandom','$2y$10$9JqfPcYULT5u1htO1XJXsuyzssmITMqAm6OdGMzh8uHWCc9uOAvsC','2024-04-18 02:37:30','ACT','2024-07-16 00:00:00','ACT','5e07f490b6d983dcc553546df53a8464c9a30ae65dd5075ba71c50e7e4f86e4b','2024-04-18 02:37:30','PBL'),(3,'inventario@gmail.com','inventario','$2y$10$JB6So5yAFuTByOSn8rFP5eWMpBVcgp2.75MI/k/6lA28ytgga2pQe','2024-04-18 03:55:39','ACT','2024-07-16 00:00:00','ACT','cb1e95f855362f15b69812d7ad1fd9a4c8cebf1a3a2be9ccdeedd37116d4161d','2024-04-18 03:55:39','PBL');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,7 +57,108 @@ INSERT INTO `usuario` VALUES (1,'danielg.rivera00@gmail.com','Daniel','$2y$10$Q0
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-18  3:10:15
+-- Dump completed on 2024-04-18  5:17:47
+-- MariaDB dump 10.19  Distrib 10.5.21-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: 127.0.0.1    Database: nwdb
+-- ------------------------------------------------------
+-- Server version	11.2.2-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `roles`
+--
+
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `rolescod` varchar(128) NOT NULL,
+  `rolesdsc` varchar(45) DEFAULT NULL,
+  `rolesest` char(3) DEFAULT NULL,
+  PRIMARY KEY (`rolescod`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES ('1','tecnicos','ACT'),('Admin','Administrador','ACT'),('Inventario','rol para revisar inventario','ACT'),('Usuario','Usuario normal','ACT');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-04-18  5:18:02
+-- MariaDB dump 10.19  Distrib 10.5.21-MariaDB, for debian-linux-gnu (x86_64)
+--
+-- Host: 127.0.0.1    Database: nwdb
+-- ------------------------------------------------------
+-- Server version	11.2.2-MariaDB
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `funciones`
+--
+
+DROP TABLE IF EXISTS `funciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `funciones` (
+  `fncod` varchar(255) NOT NULL,
+  `fndsc` varchar(255) DEFAULT NULL,
+  `fnest` char(3) DEFAULT NULL,
+  `fntyp` char(3) DEFAULT NULL,
+  PRIMARY KEY (`fncod`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `funciones`
+--
+
+/*!40000 ALTER TABLE `funciones` DISABLE KEYS */;
+INSERT INTO `funciones` VALUES ('1','asdf','ACT','sdf'),('Controllers\\Products\\Product','Controllers\\Products\\Product','ACT','CTR'),('Controllers\\Products\\Products','Controllers\\Products\\Products','ACT','CTR'),('Menu_Carrito','Menu_Carrito','ACT','MNU'),('Menu_CarritoPrivate','Menu_CarritoPrivate','ACT','MNU'),('Menu_PaymentCheckout','Menu_PaymentCheckout','ACT','MNU'),('Menu_Products','Menu_Products','ACT','MNU'),('Menu_ProductsEditar','Menu_ProductsEditar','ACT','MNU'),('Menu_ProductsPrivate','Menu_ProductsPrivate','ACT','MNU');
+/*!40000 ALTER TABLE `funciones` ENABLE KEYS */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-04-18  5:18:19
 -- MariaDB dump 10.19  Distrib 10.5.21-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: nwdb
@@ -100,7 +201,7 @@ CREATE TABLE `roles_usuarios` (
 --
 
 /*!40000 ALTER TABLE `roles_usuarios` DISABLE KEYS */;
-INSERT INTO `roles_usuarios` VALUES (1,'Admin','ACT','2023-04-15 00:00:00','2025-04-15 00:00:00'),(2,'Usuario','ACT','2023-04-15 00:00:00','2025-04-15 00:00:00');
+INSERT INTO `roles_usuarios` VALUES (1,'Admin','ACT','2023-04-15 00:00:00','2025-04-15 00:00:00'),(2,'Usuario','ACT','2023-04-15 00:00:00','2025-04-15 00:00:00'),(3,'Inventario','ACT','2023-04-15 00:00:00','2025-04-15 00:00:00');
 /*!40000 ALTER TABLE `roles_usuarios` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -112,57 +213,7 @@ INSERT INTO `roles_usuarios` VALUES (1,'Admin','ACT','2023-04-15 00:00:00','2025
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-18  3:11:35
--- MariaDB dump 10.19  Distrib 10.5.21-MariaDB, for debian-linux-gnu (x86_64)
---
--- Host: 127.0.0.1    Database: nwdb
--- ------------------------------------------------------
--- Server version	11.2.2-MariaDB
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `roles`
---
-
-DROP TABLE IF EXISTS `roles`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `roles` (
-  `rolescod` varchar(128) NOT NULL,
-  `rolesdsc` varchar(45) DEFAULT NULL,
-  `rolesest` char(3) DEFAULT NULL,
-  PRIMARY KEY (`rolescod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `roles`
---
-
-/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES ('1','tecnicos','ACT'),('Admin','Administrador','ACT'),('Usr','UsuarioRandom','ACT'),('Usuario','Usuario normal','ACT');
-/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-04-18  3:12:21
+-- Dump completed on 2024-04-18  5:17:55
 -- MariaDB dump 10.19  Distrib 10.5.21-MariaDB, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: nwdb
@@ -204,7 +255,7 @@ CREATE TABLE `funciones_roles` (
 --
 
 /*!40000 ALTER TABLE `funciones_roles` DISABLE KEYS */;
-INSERT INTO `funciones_roles` VALUES ('Admin','Menu_Carrito','ACT','2025-01-01 00:00:00'),('Admin','Menu_CarritoPrivate','ACT','2025-01-01 00:00:00'),('Usuario','Menu_Carrito','ACT','2025-01-01 00:00:00'),('Usuario','Menu_CarritoPrivate','ACT','2025-01-01 00:00:00');
+INSERT INTO `funciones_roles` VALUES ('Admin','Controllers\\Products\\Product','ACT','2025-01-01 00:00:00'),('Admin','Controllers\\Products\\Products','ACT','2025-01-01 00:00:00'),('Admin','Menu_Carrito','ACT','2025-01-01 00:00:00'),('Admin','Menu_CarritoPrivate','ACT','2025-01-01 00:00:00'),('Admin','Menu_Products','ACT','2025-01-01 00:00:00'),('Admin','Menu_ProductsEditar','ACT','2025-01-01 00:00:00'),('Admin','Menu_ProductsPrivate','ACT','2025-01-01 00:00:00'),('Inventario','Menu_ProductsEditar','ACT','2025-01-01 00:00:00'),('Usuario','Menu_Carrito','ACT','2025-01-01 00:00:00'),('Usuario','Menu_CarritoPrivate','ACT','2025-01-01 00:00:00'),('Usuario','Menu_ProductsPrivate','ACT','2025-01-01 00:00:00');
 /*!40000 ALTER TABLE `funciones_roles` ENABLE KEYS */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -216,55 +267,5 @@ INSERT INTO `funciones_roles` VALUES ('Admin','Menu_Carrito','ACT','2025-01-01 0
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-18  3:12:37
--- MariaDB dump 10.19  Distrib 10.5.21-MariaDB, for debian-linux-gnu (x86_64)
---
--- Host: 127.0.0.1    Database: nwdb
--- ------------------------------------------------------
--- Server version	11.2.2-MariaDB
+-- Dump completed on 2024-04-18  5:18:12
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
---
--- Table structure for table `funciones`
---
-
-DROP TABLE IF EXISTS `funciones`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `funciones` (
-  `fncod` varchar(255) NOT NULL,
-  `fndsc` varchar(255) DEFAULT NULL,
-  `fnest` char(3) DEFAULT NULL,
-  `fntyp` char(3) DEFAULT NULL,
-  PRIMARY KEY (`fncod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `funciones`
---
-
-/*!40000 ALTER TABLE `funciones` DISABLE KEYS */;
-INSERT INTO `funciones` VALUES ('1','asdf','ACT','sdf'),('Menu_Carrito','Menu_Carrito','ACT','MNU'),('Menu_CarritoPrivate','Menu_CarritoPrivate','ACT','MNU'),('Menu_PaymentCheckout','Menu_PaymentCheckout','ACT','MNU'),('Menu_Products','Menu_Products','ACT','MNU');
-/*!40000 ALTER TABLE `funciones` ENABLE KEYS */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2024-04-18  3:12:45
